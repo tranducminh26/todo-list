@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-section">
+        <h2>Đăng nhập</h2>
+        <input type="text" id="username" placeholder="Tên đăng nhập">
+        <input type="password" id="password" placeholder="Mật khẩu">
+        <button onclick="login()">Vào ứng dụng</button>
+    </div>
+
+    <div id="todo-section" style="display:none;">
+        <h2>Danh sách công việc</h2>
+        <div class="input-group">
+            <input type="text" id="todo-input" placeholder="Việc cần làm...">
+            <button onclick="addTodo()">Thêm</button>
+        </div>
+        <ul id="todo-list"></ul>
+        <button onclick="logout()">Đăng xuất</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

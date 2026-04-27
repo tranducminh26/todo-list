@@ -6,6 +6,7 @@ const todoRoutes = require('./routes/todos');
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static('.')); // Dòng này giúp Server hiểu và lấy các file HTML, CSS, JS trong thư mục gốc
 
 // Định nghĩa routes
 app.use('/api/auth', authRoutes);

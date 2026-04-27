@@ -1,4 +1,5 @@
-@myToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc3MjYyMDc5LCJleHAiOjE3NzcyNjU2Nzl9.sk68NU5DZnQfN6bmKHmFs_vaCIfXJvdrSPseBLElZB0
+@myToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc3MjY1MDU1LCJleHAiOjE3NzcyNjg2NTV9.N4kdKmLCeKqw61SByThX4DI9NCDqIaYvBbmhfNnk1aw
+
 
 ### Đăng ký tài khoản mới
 POST http://localhost:3000/api/auth/register
@@ -33,4 +34,21 @@ Authorization: Bearer {{myToken}}
 
 ### 4. Lấy danh sách công việc (Cần Token)
 GET http://localhost:3000/api/todos
+Authorization: Bearer {{myToken}}
+
+### 5. Đánh dấu task là đã hoàn thành (Update)
+# Thay :id bằng ID thực tế bạn thấy trong lệnh GET (ví dụ: 1)
+PUT http://localhost:3000/api/todos/1
+Content-Type: application/json
+Authorization: Bearer {{myToken}}
+
+{
+    "completed": 1
+}
+
+###
+
+### 6. Xóa một task
+# Thay :id bằng ID thực tế bạn muốn xóa
+DELETE http://localhost:3000/api/todos/1
 Authorization: Bearer {{myToken}}
