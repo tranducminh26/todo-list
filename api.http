@@ -1,0 +1,36 @@
+@myToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc3MjYyMDc5LCJleHAiOjE3NzcyNjU2Nzl9.sk68NU5DZnQfN6bmKHmFs_vaCIfXJvdrSPseBLElZB0
+
+### Đăng ký tài khoản mới
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "minh_test",
+    "password": "123"
+}
+
+###
+
+### Đăng nhập để lấy Token
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "minh_test",
+    "password": "123"
+}
+
+### 3. Thêm một công việc mới (Cần Token)
+POST http://localhost:3000/api/todos
+Content-Type: application/json
+Authorization: Bearer {{myToken}}
+
+{
+    "title": "Hoàn thành bài tập ExpressJS"
+}
+
+###
+
+### 4. Lấy danh sách công việc (Cần Token)
+GET http://localhost:3000/api/todos
+Authorization: Bearer {{myToken}}
